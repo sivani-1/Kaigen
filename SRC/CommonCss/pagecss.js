@@ -2,22 +2,22 @@ module.exports = {
     containerFull: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center'
     },
     logo1: {
-        // width: 200,
+        width: 100,
         height: 70,
         resizeMode: 'contain',
-        marginBottom: 20
-        // backgroundColor: 'white',
+        marginBottom: 20,
+        backgroundColor: 'black',
     },
     hr80: {
         width: '80%',
         height: 1,
         backgroundColor: 'gray',
-        marginVertical: 20
+       
     },
     row: {
         flexDirection: 'row',

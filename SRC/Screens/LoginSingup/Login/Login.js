@@ -1,98 +1,48 @@
-import { StyleSheet, Text, View, Image, TextInput, ActivityIndicator} from 'react-native';
-import React from 'react';
-import logo from '../../../../assets/logo.png';
-import { containerFull, hr80, logo1 } from '../../../CommonCss/pagecss';
-import { formbtn, formHead, formInput, formTextLinkCenter, formTextLinkRight } from '../../../CommonCss/formcss';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { formHead, formIcon, formPara, formbtn } from '../../../CommonCss/formcss';
+import { containerFull } from '../../../CommonCss/pagecss';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import Frame3 from '../../../../assets/1564520_code_open_password_icon 1.png';
+import Frame2 from '../../../../assets/Frame (2).png';
+
 const Login = ({navigation}) => {
-    // const [email, setEmail] = React.useState('');
-    // const [password, setPassword] = React.useState('');
-    // const [loading, setLoading] = React.useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    // const handleLogin = () => {
-    //     if (email == '' || password == '') {
-    //         alert('Please enter email and password');
-    //     }
-    //     else {
-    //         setLoading(true);
-    //         fetch('http://10.0.2.2:3000/signin', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({
-    //                 email,
-    //                 password
-    //             })
-    //         })
-    //             .then(res => res.json())
-    //             .then(async data => {
-    //                 if (data.error) {
-    //                     setLoading(false);
-    //                     alert(data.error);
-    //                 }
-    //                 else if (data.message == 'Successfully Signed In') {
-    //                     setLoading(false);
-    //                     await AsyncStorage.setItem('user', JSON.stringify(data));
-    //                     navigation.navigate('MainPage', { data });
-    //                 }
-    //             })
-    //             .catch(err => {
-    //                 setLoading(false);
-    //                 alert(err);
-    //             })
-    //     }
-    //     // navigation.navigate('MainPage')
-    // }
+  const handleLogin = () => {
+    if (username === 'ethan.hunt' && password === 'entity!2025') {
+        navigation.navigate('MainStackscreen');
+        
+    } else {
+        alert(
+            'Invalid Credentials. The username or password you entered is incorrect.Username: ethan.hunt Password: entity!2025'
+          );
+    }
+  };
+
     return (
-        // <View style={containerFull}>
-        //     <Image source={logo} style={logo1} />
-        //     <Text style={formHead}>Login</Text>
-        //     <TextInput placeholder="Enter Your Email" style={formInput}
-        //         onChangeText={(text) => setEmail(text)}
-        //     />
-        //     <TextInput placeholder="Enter Your Password" style={formInput}
-        //         secureTextEntry={true}
-        //         onChangeText={(text) => setPassword(text)}
-        //     />
-        //     <Text style={formTextLinkRight}
-        //         onPress={() => navigation.navigate('ForgotPassword_EnterEmail')}
-        //     >Forgot Password?</Text>
-
-        //     {
-        //         loading ?
-        //             <ActivityIndicator size="large" color="white" />
-        //             :
-        //             <Text style={formbtn} onPress={
-        //                 () => handleLogin()
-        //             }>
-        //                 Submit
-        //             </Text>
-        //     }
-
-
-        //     <View style={hr80}></View>
-
-
-        //     <Text style={formTextLinkCenter}>
-        //         Don't have an account? <Text style={{ color: 'white' }}
-        //             onPress={() => navigation.navigate('Signup_EnterEmail')}
-        //         >Signup</Text>
-        //     </Text>
-
-        // </View>
         <View style={containerFull}>
-            <Image source={logo} style={logo1}/>
-            <Text style={formHead}>Login</Text>
-            <TextInput placeholder='Enter your Email' style={formInput}/>
-            <TextInput placeholder='Enter your Password' style={formInput} secureTextEntry={true}/>
-            <Text style={formTextLinkRight} onPress={() => navigation.navigate('ForgotPassword_EnterEmail')}>Forgot password</Text>
-            <Text style={formbtn} onPress={() => navigation.navigate('Mainpage')}>Submit</Text>
-            <View style={hr80}></View>
+            {/* <Image source={logo} style={logo1}/> */}
+            <Text style={formHead}>Rento</Text>
+            <Text style={formPara}>All-in-1 Rent App</Text>
+            <View style={{padding: 30,}}></View>
+            <View style={{flexDirection:'row', width: '80%',backgroundColor: '#dcdcdc',borderWidth: 1,borderRadius: 10,marginVertical: 10,paddingHorizontal: 15,paddingVertical: 10,fontSize: 20,fontWeight:'bold',color: 'black'}}>
+                <Image source={Frame2} style={formIcon}/>
+                <TextInput placeholder='Enter Username' style={{paddingLeft:10}} value={username} onChangeText={setUsername}/>
+            </View>
+            <View style={{flexDirection:'row', width: '80%',backgroundColor: '#dcdcdc',borderWidth: 1,borderRadius: 10,marginVertical: 10,paddingHorizontal: 15,paddingVertical: 10,fontSize: 20,fontWeight:'bold', color: 'black'}}>
+                <Image source={Frame3} style={formIcon}/>
+                <TextInput placeholder='Enter Password' style={{paddingLeft:10}} secureTextEntry={true} value={password} onChangeText={setPassword}/>
+            </View>
+            <View style={{padding: 15,}}></View>
+            {/* <Text style={formTextLinkRight} onPress={() => navigation.navigate('ForgotPassword_EnterEmail')}>Forgot password</Text> */}
+            <Text style={formbtn} onPress={handleLogin}>Login</Text>
+            {/* <View style={hr80}></View>
             <Text style={formTextLinkCenter}>Dont have an account ? 
                 <Text style={{color: 'white'}} onPress={() => navigation.navigate('Signup_EnterEmail')}>Signup</Text>
-            </Text>
+            </Text> */}
         </View>
     )
 }

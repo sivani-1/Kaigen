@@ -1,25 +1,32 @@
+
 module.exports = {
     formHead: {
-        fontSize: 30,
-        color: 'white',
-        textAlign: 'center',
+        fontSize: 50,
+        color: 'black',
         fontWeight: 'bold',
+        
+        // backgroundColor: 'white',
+    },
+    formPara: {
+        fontSize: 20,
+        color: 'black',
+        fontWeight: 'bold',
+        // marginVertical:100,/
         // backgroundColor: 'white',
     },
     formInput: {
         width: '80%',
         // height: 40,
-        backgroundColor: 'white',
+        backgroundColor: '#ffffff',
+        borderWidth: 10,
         borderRadius: 10,
-        marginVertical: 10,
-        paddingHorizontal: 15,
-        paddingVertical: 10,
+        margin:5,
         fontSize: 18,
     },
     formbtn: {
         width: '80%',
-        backgroundColor: 'black',
-        borderRadius: 10,
+        backgroundColor: '#D9017A',
+        borderRadius: 100,
         borderColor: 'white',
         borderWidth: 1,
         fontSize: 25,
@@ -57,4 +64,11 @@ module.exports = {
         width: '80%',
         marginVertical: 10,
     },
+    formIcon: {
+        alignItems:  'flex-start',
+        width: 30,
+        height: 30,
+        padding: 10,
+    }
+
 }
