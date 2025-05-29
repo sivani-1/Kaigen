@@ -40,7 +40,7 @@ const Login= ({ navigation }) => {
     );
 
     if (userExists) {
-      navigation.navigate('StartScreen');
+      navigation.navigate('BottomTabs');
     } else {
       alert('User does not exist or incorrect credentials. Redirecting to Sign Up.');
       navigation.navigate('Signup');
